@@ -1,0 +1,21 @@
+2025-12-11 19:50:05 | Information | Now listening on: https://localhost:7105
+2025-12-11 19:50:05 | Information | Now listening on: http://localhost:5106
+2025-12-11 19:50:05 | Information | Application started. Press Ctrl+C to shut down.
+2025-12-11 19:50:05 | Information | Hosting environment: Development
+2025-12-11 19:50:05 | Information | Content root path: D:\Users\hp\source\repos\Todooo\Todooo
+2025-12-11 19:50:12 | Information | [Action Executing] Controller: UserController, Action: Todooo.Controllers.UserController.Login (Todooo)
+2025-12-11 19:50:12 | Information | [Action Executed] Controller: UserController, Action: Todooo.Controllers.UserController.Login (Todooo), Status: Success
+2025-12-11 19:50:15 | Information | [Action Executing] Controller: UserController, Action: Todooo.Controllers.UserController.Login (Todooo)
+2025-12-11 19:50:15 | Information | [Action Executed] Controller: UserController, Action: Todooo.Controllers.UserController.Login (Todooo), Status: Success
+2025-12-11 19:50:15 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Add (Todooo)
+2025-12-11 19:50:15 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Add (Todooo), Status: Success
+2025-12-11 19:50:28 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Add (Todooo)
+2025-12-11 19:50:28 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Add (Todooo), Status: Success
+2025-12-11 19:50:28 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Index (Todooo)
+2025-12-11 19:50:28 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Index (Todooo), Status: Success
+2025-12-11 19:50:31 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Edit (Todooo)
+2025-12-11 19:50:31 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Edit (Todooo), Status: Success
+2025-12-11 19:50:36 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Edit (Todooo)
+2025-12-11 19:50:36 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Edit (Todooo), Status: Success
+2025-12-11 19:50:36 | Information | [Action Executing] Controller: TodoController, Action: Todooo.Controllers.TodoController.Index (Todooo)
+2025-12-11 19:50:36 | Information | [Action Executed] Controller: TodoController, Action: Todooo.Controllers.TodoController.Index (Todooo), Status: Success

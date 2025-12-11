@@ -1,0 +1,44 @@
+﻿@model Todooo.ViewModel.TodoAddvm
+@using Todooo.Enum
+
+<h2>Ajouter un Todo</h2>
+
+<form asp-action="Add" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="libele"></label>
+        <input asp-for="libele" class="form-control" />
+        <span asp-validation-for="libele" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="discription"></label>
+        <input asp-for="discription" class="form-control" />
+        <span asp-validation-for="discription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="datelimite"></label>
+        <input asp-for="datelimite" type="date" class="form-control" />
+        <span asp-validation-for="datelimite" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="statut"></label>
+        todo:<input type="radio" value="@(State.todo)" asp-for="statut" />
+        doing:<input type="radio" value="@(State.doing)" asp-for="statut" />
+        done:<input type="radio" value="@(State.donne)" asp-for="statut" />
+        <span asp-validation-for="statut" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+
+<a asp-action="Index">Retour à la liste</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

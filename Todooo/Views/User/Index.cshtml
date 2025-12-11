@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Accueil Utilisateur";
+}
+
+<h1>Bienvenue sur la page d'accueil de l'utilisateur (UserController)</h1>
+<p>
+    La vue 'Index' a été trouvée. Votre application devrait démarrer sans erreur et la journalisation est active !
+</p>
+@if (Context.Session.GetString("user") != null)
+{
+    <a asp-controller="User" asp-action="Logout">Déconnexion</a>
+}

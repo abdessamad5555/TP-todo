@@ -1,0 +1,37 @@
+﻿@model List<Todooo.Models.Todo>
+@using Todooo.Enum
+
+<h1>Liste des Todos</h1>
+
+<div class="mb-3">
+    <a asp-action="Add" class="btn btn-primary">Ajouter un Todo</a>
+    @* Bouton Déconnexion *@
+    <a asp-controller="User" asp-action="Logout" class="btn btn-danger">Déconnexion</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Libelle</th>
+            <th>Description</th>
+            <th>Date limite</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todo in Model)
+        {
+            <tr>
+                <td>@todo.libele</td>
+                <td>@todo.discription</td>
+                <td>@todo.datelimite.ToString("dd/MM/yyyy")</td>
+                <td>@todo.statut</td>
+                <td>
+                    <a asp-action="Edit" asp-route-index="@Model.IndexOf(todo)" class="btn btn-sm btn-warning">Modifier</a>
+                    <a asp-action="Delete" asp-route-index="@Model.IndexOf(todo)" class="btn btn-sm btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

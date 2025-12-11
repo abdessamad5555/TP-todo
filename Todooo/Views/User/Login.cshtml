@@ -1,0 +1,19 @@
+﻿@model Todooo.ViewModel.Uservm
+
+<h2>Login</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label>Email :</label>
+        <input asp-for="email" />
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Password :</label>
+        <input asp-for="password" type="password" />
+        <span asp-validation-for="password" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Se connecter</button>
+</form>
