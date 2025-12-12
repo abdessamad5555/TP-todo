@@ -1,41 +1,64 @@
 ﻿@model Todooo.ViewModel.TodoAddvm
 @using Todooo.Enum
 
-<h2>Ajouter un Todo</h2>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Ajouter un Todo</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Add" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-<form asp-action="Add" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="libele" class="form-label">Titre</label>
+                            <input asp-for="libele" class="form-control" />
+                            <span asp-validation-for="libele" class="text-danger"></span>
+                        </div>
 
-    <div class="form-group">
-        <label asp-for="libele"></label>
-        <input asp-for="libele" class="form-control" />
-        <span asp-validation-for="libele" class="text-danger"></span>
+                        <div class="mb-3">
+                            <label asp-for="discription" class="form-label">Description</label>
+                            <textarea asp-for="discription" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="discription" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="datelimite" class="form-label">Date limite</label>
+                            <input asp-for="datelimite" type="date" class="form-control" />
+                            <span asp-validation-for="datelimite" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Statut</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="@(State.todo)" asp-for="statut" id="todo" />
+                                    <label class="form-check-label" for="todo">À faire</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="@(State.doing)" asp-for="statut" id="doing" />
+                                    <label class="form-check-label" for="doing">En cours</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="@(State.donne)" asp-for="statut" id="done" />
+                                    <label class="form-check-label" for="done">Terminé</label>
+                                </div>
+                            </div>
+                            <span asp-validation-for="statut" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-action="Index" class="btn btn-secondary">Retour</a>
+                            <button type="submit" class="btn btn-primary">Ajouter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label asp-for="discription"></label>
-        <input asp-for="discription" class="form-control" />
-        <span asp-validation-for="discription" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="datelimite"></label>
-        <input asp-for="datelimite" type="date" class="form-control" />
-        <span asp-validation-for="datelimite" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="statut"></label>
-        todo:<input type="radio" value="@(State.todo)" asp-for="statut" />
-        doing:<input type="radio" value="@(State.doing)" asp-for="statut" />
-        done:<input type="radio" value="@(State.donne)" asp-for="statut" />
-        <span asp-validation-for="statut" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Ajouter</button>
-</form>
-
-<a asp-action="Index">Retour à la liste</a>
+</div>
 
 @section Scripts {
     @{

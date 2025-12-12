@@ -1,19 +1,46 @@
 ﻿@model Todooo.ViewModel.Uservm
 
-<h2>Login</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4 class="mb-0">Connexion</h4>
+                </div>
+                <div class="card-body p-4">
+                    @if (ViewBag.error != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @ViewBag.error
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
 
-<form asp-action="Login" method="post">
-    <div>
-        <label>Email :</label>
-        <input asp-for="email" />
-        <span asp-validation-for="email" class="text-danger"></span>
+                    <form asp-action="Login" method="post">
+                        <div class="mb-3">
+                            <label asp-for="email" class="form-label">Email</label>
+                            <input asp-for="email" class="form-control" placeholder="exemple@email.com" />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="password" class="form-label">Mot de passe</label>
+                            <input asp-for="password" type="password" class="form-control" placeholder="••••••••" />
+                            <span asp-validation-for="password" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Se connecter</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div>
-        <label>Password :</label>
-        <input asp-for="password" type="password" />
-        <span asp-validation-for="password" class="text-danger"></span>
-    </div>
-
-    <button type="submit">Se connecter</button>
-</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
